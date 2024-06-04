@@ -10,17 +10,35 @@ body{
     grid-template-rows: repeat(6,1fr);
 }
 header{
-    grid-row: 1;
+    grid-row: 2;
     grid-column: 1/7;
-    font-size: 300%;
+    font-size: 500%;
+    font-weight: bolder;
     color: antiquewhite;
+    display: flex;
+    justify-content: center;
+}
+.main-text{
+    grid-row: 4;
+    grid-column: 1/7;
+    font-size: 150%;
+    color:goldenrod;
+    text-shadow: #fff;
+    display: flex;
+    justify-content: center;
 }
 footer{
     grid-row: 6;
     grid-column: 1/7;
     font-size: 200%;
+    font-weight: lighter;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    color: antiquewhite;
 }
 .loader {
+    size: 200%;
     grid-row: 3/5;
     grid-column: 3/5;
     position: relative;
