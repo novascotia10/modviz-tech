@@ -1,50 +1,95 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-header {
+body{
     background-color: #333;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
+    font-family: monospace;
 }
 
-nav {
-    background-color: #444;
-    color: white;
-    padding: 10px;
-    text-align: center;
+.main-container{
+    height: 960px;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: repeat(6,1fr);
 }
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+header{
+    grid-row: 1;
+    grid-column: 1/7;
+    font-size: 300%;
+    color: antiquewhite;
 }
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
+footer{
+    grid-row: 6;
+    grid-column: 1/7;
+    font-size: 200%;
 }
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-main {
-    padding: 20px;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
+.loader {
+    grid-row: 3/5;
+    grid-column: 3/5;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 25px 25px 75px rgba(0,0,0,0.55);
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    overflow: hidden;
+  }
+  
+  .loader::before {
+    content: '';
+    position: absolute;
+    inset: 20px;
+    background: transparent;
+    border: 1px dashed#444;
+    border-radius: 50%;
+    box-shadow: inset -5px -5px 25px rgba(0,0,0,0.25),
+    inset 5px 5px 35px rgba(0,0,0,0.25);
+  }
+  
+  .loader::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px dashed#444;
+    box-shadow: inset -5px -5px 25px rgba(0,0,0,0.25),
+    inset 5px 5px 35px rgba(0,0,0,0.25);
+  }
+  
+  .loader span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    background: transparent;
+    transform-origin: top left;
+    animation: radar81 2s linear infinite;
+    border-top: 1px dashed #fff;
+  }
+  
+  .loader span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-}
+    height: 100%;
+    background: seagreen;
+    transform-origin: top left;
+    transform: rotate(-55deg);
+    filter: blur(30px) drop-shadow(20px 20px 20px seagreen);
+  }
+  
+  @keyframes radar81 {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
